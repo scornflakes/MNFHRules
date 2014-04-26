@@ -34,6 +34,7 @@ import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 import datetime
+from random import randint
 
 class MNFHRules(callbacks.Plugin):
     """Add the help for "@plugin help MNFHRules" here
@@ -55,9 +56,9 @@ class MNFHRules(callbacks.Plugin):
     welcome = wrap(welcome)
 
     def dance(self, irc, msg, args):
-        irc.reply('\x0313 \\o/')
-        irc.reply('\x0313 /o/')
-        irc.reply('\x0313 \\o\\')
+        irc.reply('\x03%s\\o/' % str(randint(0, 16)).zfill(1))
+        irc.reply('\x03%s/o/' % str(randint(0, 16)).zfill(1))
+        irc.reply('\x03%s\\o\\' % str(randint(0, 16)).zfill(1))
     dance = wrap(dance)
 
 Class = MNFHRules
