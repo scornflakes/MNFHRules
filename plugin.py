@@ -72,6 +72,11 @@ class MNFHRules(callbacks.Plugin):
     whatislove = wrap(whatislove)
 
 
+    def stab(self, irc, msg, args, usern):
+        irc.reply("o()xxxx[{::::::*%s*::::::>" % usern)
+    stab = wrap(stab)
+
+
 
 Class = MNFHRules
 
