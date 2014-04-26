@@ -48,12 +48,9 @@ class MNFHRules(callbacks.Plugin):
             irc.reply("It''s not Friday, You can pretend it is, but it just won''t be the same.") 
 
     isitfriday = wrap(isitfriday)
-    def welcome(self, irc, msg, args):
-        newusername = 'new user'
-        if len(args)==1:
-            newusername = args[0]
+    def welcome(self, irc, msg, args, newusername):
         irc.reply("Welcome to #mnfh {0}! We look forward to getting to know you! Please read more about the chat and rules here: http://goo.gl/dh08Gr".format(newusername))
-    welcome = wrap(welcome)
+    welcome = wrap(welcome, ['text'])
 
     def dance(self, irc, msg, args):
         irc.reply('\x03%s\\o/' % str(randint(0, 16)).zfill(1))
@@ -74,7 +71,7 @@ class MNFHRules(callbacks.Plugin):
 
     def stab(self, irc, msg, args, usern):
         irc.reply("o()xxxx[{::::::*%s*::::::>" % usern)
-    stab = wrap(stab)
+    stab = wrap(stab, ['text'])
 
 
 
