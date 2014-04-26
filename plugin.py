@@ -60,6 +60,18 @@ class MNFHRules(callbacks.Plugin):
         irc.reply('\x03%s/o/' % str(randint(0, 16)).zfill(1))
         irc.reply('\x03%s\\o\\' % str(randint(0, 16)).zfill(1))
     dance = wrap(dance)
+    
+    def murica(self, irc, msg, args):
+        irc.reply('Fuck YEAH!')
+    murica = wrap(murica)
+
+    def whatislove(self, irc, msg, args):
+        irc.reply('Baby don't hurt me')
+        irc.reply('Don't hurt me')
+        irc.reply('No more')
+    whatislove = wrap(whatislove)
+
+
 
 Class = MNFHRules
 
